@@ -5,29 +5,30 @@ describe("scenario",function(){
   });
   afterEach(function(){
   });
+    
+  it("diamond find index" , function() {
+    var index = this.diamond.findIndex('B');
+    expect(index).toBe(1);
+  })    
 
-  it("diamond A type",function(){
+  xit("diamond A type",function(){
     var output = this.diamond.create('A');
-    expect(output).toBe('A');
+    expect(output).toEqual(['A']);
   });
 
-  it("diamond B type", function(){
-    var output = this.diamond.create('AB');
-    expect(output).toBe("A-B B-A");
+  xit("diamond B type", function(){
+    var output = this.diamond.create('B');
+    expect(output).toEqual(["A","B B","A"]);
   })
 
-  it("diamond C type", function(){
+  xit("diamond C type", function(){
     var output = this.diamond.create('ABC');
-    expect(output).toBe("A-B B-C   C-B B-A");
+    expect(output).toEqual(["A","B B","C   C","B B","A"]);
   })
 
-  it("diamond D type", function(){
+  xit("diamond D type", function(){
     var output = this.diamond.create('ABCD');
-    expect(output).toBe("A-B B-C   C-D     D-C   C-B B-A");
+    expect(output).toEqual(["A","B B","C   C","D     D","C   C","B B","A"]);
   })
 
-  it("diamond Z type", function(){
-    var output = this.diamond.create('XYZ');
-    expect(output).toBe("X-Y Y-Z   Z-Y Y-X");
-  })
 });
